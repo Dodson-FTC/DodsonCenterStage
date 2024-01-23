@@ -20,9 +20,13 @@ public class DriveAndLift extends LinearOpMode  {
         leftDrive.setDirection(DcMotor.Direction.REVERSE);
         rightDrive.setDirection(DcMotor.Direction.FORWARD);
 
+        leftLift.setDirection(DcMotor.Direction.REVERSE);
+        rightLift.setDirection(DcMotor.Direction.FORWARD);
+
         waitForStart();
 
         while(opModeIsActive()) {
+            // Drive
             double drive = -gamepad1.left_stick_y;
             double turn = gamepad1.right_stick_x;
 
@@ -31,6 +35,12 @@ public class DriveAndLift extends LinearOpMode  {
 
             leftDrive.setPower(left);
             rightDrive.setPower(right);
+
+            // Operator
+            double lift = -gamepad2.left_stick_y;
+
+            leftLift.setPower(lift);
+            rightLift.setPower(lift);
 
             telemetry.addData("Right", right);
             telemetry.addData("Left", left);
