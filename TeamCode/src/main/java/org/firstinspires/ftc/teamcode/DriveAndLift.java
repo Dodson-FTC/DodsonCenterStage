@@ -65,7 +65,8 @@ public class DriveAndLift extends LinearOpMode  {
 
             // Operator
             double lift = -gamepad2.left_stick_y;
-            single claw = gamepad2.left_back_x;n
+            single claw = gamepad2.left_back_y;
+            single wrist = gamepad2.right_back_y;
 
             // Apply power to the motors
             leftLift.setPower(lift);
